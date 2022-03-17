@@ -1,4 +1,4 @@
-package com.leecode.zjs;
+package com.zjs.leecode;
 
 import org.junit.Test;
 
