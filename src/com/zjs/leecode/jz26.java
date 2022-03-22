@@ -5,7 +5,7 @@ import org.junit.Test;
 public class jz26 {
 
     @Test
-    void test(){
-
+    public void test(){
+        System.out.println("测试");
     }
 }
