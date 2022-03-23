@@ -20,7 +20,10 @@ public class zhongToalabo {
         map.put('十',10L);map.put('百',100L);map.put('千',1000L);map.put('万',10000L);
         map.put('亿',100000000L);
 
-        String[] s1 = "一亿零五百零二亿一千二百三十四万一千零五".split("亿");
+//        String[] s1 = "一亿零五万零五百零二亿一千二百三十四万一千零五".split("亿");
+//        String[] s1 = "十亿零五万零五百零二亿一千二百三十四万一千零五".split("亿");
+        String[] s1 = "一百零五亿一千二百三十四万一千七百零五".split("亿");
+//        String[] s1 = "十亿零五十万".split("亿");
         long ans = 0L;
         for (int i = 0; i < s1.length; i++) {
             System.out.println(zhToala(s1[i].toCharArray()));
@@ -41,14 +44,23 @@ public class zhongToalabo {
             if (map.containsKey(nums[i])){
                 if (nums[i]=='十'||nums[i]=='百'||nums[i]=='千'){
                     //千百十
-                    Character pop = stack.pop();
-                    ans += nummap.get(pop)*map.get(nums[i]);
+                    if (stack.isEmpty())
+                        ans += 10;
+                    else {
+                        Character pop = stack.pop();
+                        ans += nummap.get(pop)*map.get(nums[i]);
+                    }
                 }
                 else {
                     //万
-                    Character pop = stack.pop();
-                    ans += nummap.get(pop);
-                    ans *= map.get(nums[i]);
+                    if (stack.isEmpty()) {
+                        ans *= map.get(nums[i]);
+                    }
+                    else {
+                        Character pop = stack.pop();
+                        ans += nummap.get(pop);
+                        ans *= map.get(nums[i]);
+                    }
                 }
             }
             else if (nums[i]!='零'){
