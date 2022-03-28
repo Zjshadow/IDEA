@@ -1,6 +1,7 @@
 package com.zjs.leecode;
 import org.junit.Test;
 
+
 public class bag01 {
 
     @Test
@@ -30,12 +31,23 @@ public class bag01 {
         }
 
         //  for循环顺序可以颠倒
+//        for (int i = 1; i < weight.length; i++) {
+//            for (int j = 1; j < bagSize + 1; j++) {
+//                if (j < weight[i])
+//                    dp[i][j] = dp[i - 1][j];
+//                else
+//                    dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - weight[i]] + value[i]);
+//            }
+//        }
+
+        // 测试下从后向前
         for (int i = 1; i < weight.length; i++) {
-            for (int j = 1; j < bagSize + 1; j++) {
+            for (int j = bagSize; j >= 1; j--) {
                 if (j < weight[i])
                     dp[i][j] = dp[i - 1][j];
                 else
                     dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - weight[i]] + value[i]);
+                System.out.println(dp[i][j]);
             }
         }
         //打印dp数组
