@@ -16,10 +16,12 @@ public class bag01 {
 
         int ans2 = weightBagProblem2(weight, value, bagSize);
         System.out.println(ans2);
+
+        int ans3 = weightBagProblem3(weight, value, bagSize);
+        System.out.println(ans3);
     }
 
-//   二维数组
-
+//   二维数组   01背包
     public int weightBagProblem(int[] weight, int[] value, int bagSize){
         int[][] dp = new int[weight.length][bagSize + 1];
 
@@ -27,6 +29,7 @@ public class bag01 {
             dp[0][j] = value[0];
         }
 
+        //  for循环顺序可以颠倒
         for (int i = 1; i < weight.length; i++) {
             for (int j = 1; j < bagSize + 1; j++) {
                 if (j < weight[i])
@@ -47,13 +50,42 @@ public class bag01 {
 
     }
 
-//    一维数组
+//    一维数组  01背包
     public int weightBagProblem2(int[] weight, int[] value, int bagSize){
         int[] dp = new int[bagSize + 1];
-//        默认初始化为0
-
+        //  默认初始化为0
+        //  for循环顺序不可以颠倒
         for (int i = 0; i < weight.length; i++) {
+            // 必须从后向前遍历
             for (int j = bagSize; j >= 0; j--) {
+                if (j < weight[i])
+                    dp[j] = dp[j];
+                else
+                    dp[j] = Math.max(dp[j], dp[j - weight[i]] + value[i]);
+            }
+            //内部打印一维dp数组更新
+            for (int j = 0; j <= bagSize; j++){
+                System.out.print(dp[j] + " ");
+            }
+            System.out.print("\n");
+        }
+
+        //打印dp数组
+        for (int j = 0; j <= bagSize; j++){
+            System.out.print(dp[j] + " ");
+        }
+        System.out.print("\n");
+        return dp[bagSize];
+
+    }
+
+    //    一维数组  完全背包
+    public int weightBagProblem3(int[] weight, int[] value, int bagSize){
+        int[] dp = new int[bagSize + 1];
+        //  默认初始化为0
+        //  for循环顺序可以颠倒
+        for (int i = 0; i < weight.length; i++) {
+            for (int j = 0; j <= bagSize; j++) {
                 if (j < weight[i])
                     dp[j] = dp[j];
                 else
