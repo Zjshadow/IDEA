@@ -7,7 +7,7 @@ import java.util.Scanner;
  * @version 1.0
  * @data 2022/8/13 15:58
  **/
-public class Main_2 {
+public class mt_8_13_T2 {
     public static int val = 0;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

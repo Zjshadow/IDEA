@@ -1,7 +1,5 @@
 package com.zjs.Exam;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -9,7 +7,7 @@ import java.util.Scanner;
  * @version 1.0
  * @data 2022/8/13 15:58
  **/
-public class Main_5 {
+public class mt_8_13_T5 {
     static long maxVal = 0;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

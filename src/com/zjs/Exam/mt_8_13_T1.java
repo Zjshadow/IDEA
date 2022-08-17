@@ -1,6 +1,5 @@
 package com.zjs.Exam;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -9,7 +8,7 @@ import java.util.Scanner;
  * @version 1.0
  * @data 2022/8/13 15:58
  **/
-public class Main_1 {
+public class mt_8_13_T1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         while (sc.hasNext()) {
