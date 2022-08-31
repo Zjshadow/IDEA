@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Scanner;
 
-public class MS_8_26_T1 {
+public class MS_8_26_T2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String in = sc.nextLine();

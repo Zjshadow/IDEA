@@ -11,7 +11,7 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-public class MS_8_26_T3 {
+public class MS_8_26_T3_2 {
     public static void main(String[] args) {
         int[] a = new int[] {1, 3, 2};
         int[] b = new int[] {1, 2, 2};

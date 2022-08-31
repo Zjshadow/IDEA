@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Scanner;
 
-public class HONOR_8_16_T1 {
+public class MS_8_26_T1 {
     public static String weekToDayFormat(int year, int month, int week, int day) {
         Calendar calendar = Calendar.getInstance();
         // 注意这里要修改为周一为一周的第一天
